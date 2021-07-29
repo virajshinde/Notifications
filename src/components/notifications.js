@@ -5,10 +5,10 @@ import {useState} from 'react'
 
 
 
-const notify1 = new Date(2021,7,29,18,51)
+const notify1 = new Date(2021,7,29,19,11).getMinutes()
 const notifystring1 = notify1.toString()
-const notify2 = new Date(2021,7,29,18,51)
-const notifystring2 = notify2.toString()
+// const notify2 = new Date(2021,7,29,18,51)
+// const notifystring2 = notify2.toString()
 
 const dateNotify = new Date()
 
@@ -19,12 +19,21 @@ const dateNotifyString = dateNotify.toString()
 const Notify = () => {
 
     var notify = null
-    
+    const notify2 = new Date().getMinutes()
+    const notifystring2 = notify2.toString()
     const [dates,setDates] = useState([notifystring1,notifystring2])
     const [isActive,setIsActive] = useState(true)
         
      const notification = null
-       
+    
+    setInterval(() => {
+        console.log(dates)
+     if(dates[0]===dates[1]){
+         notify = 'Norified'
+     }else{
+         notify = 'Not notified'
+     }    
+    })
     console.log(dates)
      if(dates[0]===dates[1]){
          notify = 'Norified'
