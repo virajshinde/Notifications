@@ -21,12 +21,14 @@ const Notify = () => {
     var notify = null
     const notify1 = new Date(2021,7,30,9,55).getMinutes()
 const notifystring1 = notify1.toString()
-    const notify2 = new Date(2021,7,30,11,28 ).getMinutes()
-    const notifystring2 = notify2.toString()
+    const notify2 = new Date(2021,7,30,14,29 ).getMinutes()
+    const notifystring2 = notify2.toString() 
     const notifyCurrent = new Date().getMinutes()
-    const currentDate = notifyCurrent.toString()    
-
-    const [Dates,setDates] = useState([notifystring1,notifystring2])
+    const currentDate = notifyCurrent.toString()   
+    const storedData =[[notifystring1, "This is the first message"],[notifystring2,"This is the second message"]]
+    
+    // const [Dates,setDates] = useState([notifystring1,notifystring2])
+    const [Dates,setDates] = useState([storedData[0][0],storedData[1][0]])
     const [isActive,setIsActive] = useState(true)
         
      const notification = null
@@ -73,7 +75,7 @@ const notifystring1 = notify1.toString()
             <div className={"container"}>
 
             {isActive && 
-                Dates.map(item => <div> {item} </div>)
+                Dates.map(item => <div> {item[1]} </div>)
             
             }
             
