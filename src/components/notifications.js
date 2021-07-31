@@ -21,7 +21,7 @@ const Notify = () => {
     var notify = null
     const notify1 = new Date(2021,7,30,9,55).getMinutes()
 const notifystring1 = notify1.toString()
-    const notify2 = new Date(2021,7,30,14,47 ).getMinutes()
+    const notify2 = new Date(2021,7,30,8,38 ).getMinutes()
     const notifystring2 = notify2.toString() 
     const notifyCurrent = new Date().getMinutes()
     const currentDate = notifyCurrent.toString()   
@@ -33,7 +33,7 @@ const notifystring1 = notify1.toString()
         
      const notification = null
     
-    
+    const count = 0
     const datesList = Dates.map((el)=> {
             if(currentDate=== el[0] ){
                 notify = 'Norified'
@@ -53,12 +53,7 @@ const notifystring1 = notify1.toString()
         var renderedOutput = Dates.map(item => <div> {item} </div>)
          console.log(renderedOutput)
     
-    // console.log(dates)
-    //  if(dates[0]===dates[1]){
-    //      notify = 'Norified'
-    //  }else{
-    //      notify = 'Not notified'
-    //  }
+        
     
     const handleShow = ()=>{
         setIsActive(true)
@@ -87,6 +82,10 @@ const notifystring1 = notify1.toString()
                 
                {datesList} 
                 
+            </div>
+
+            <div>
+
             </div>
             
         </div>
